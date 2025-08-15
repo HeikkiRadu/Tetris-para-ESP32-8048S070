@@ -5,6 +5,8 @@
 extern "C" {
 #endif
 
+#include "color_defines.h"
+
 // Estructura del mapa
 struct MapaConfig {
   unsigned int initiated;
