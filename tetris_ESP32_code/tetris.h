@@ -6,6 +6,7 @@ extern "C" {
 #endif
 
 #include "color_defines.h"
+#include "figures_types.h"
 
 #define TETRIS_MAP_DIV_HIGH   12
 #define TETRIS_MAP_DIV_WIDTH  20

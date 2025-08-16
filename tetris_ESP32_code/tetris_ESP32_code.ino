@@ -28,6 +28,8 @@ void setup() {
   
   setDrawTetrisMapCallback(draw_callback);
   drawTetrisMapCallback();
+
+  FigureO unafigura;
   
 }
 
