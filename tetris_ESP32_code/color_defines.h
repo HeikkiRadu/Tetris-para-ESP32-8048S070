@@ -1,3 +1,11 @@
+#ifndef COLOR_DEFINES_H
+#define COLOR_DEFINES_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+// Definiciones de colores para tetris
 #define COLOR_NEGRO     0x0000
 #define COLOR_GRIS      0x8410
 #define COLOR_AZUL      0x001F
@@ -8,6 +16,7 @@
 #define COLOR_CYAN      0x07FF
 #define COLOR_NARANJA   0xFD20
 
+// Vector de colores
 static const int Colores[] = {COLOR_NEGRO,      // Fondo: 0
                               COLOR_GRIS,       // Marco: 1
                               COLOR_AMARILLO,   // O:     2
@@ -17,3 +26,9 @@ static const int Colores[] = {COLOR_NEGRO,      // Fondo: 0
                               COLOR_VERDE,      // S:     6
                               COLOR_ROJO,       // Z:     7
                               COLOR_MORADO};    // T:     8
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif

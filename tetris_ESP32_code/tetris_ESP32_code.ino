@@ -2,18 +2,20 @@
 
 #include "display_config.h"
 
-#define display_high          480
-#define display_width         800
-#define tetris_map_div_high   12
-#define tetris_map_div_width  20
+#define DISPLAY_HIGH          480
+#define DISPLAY_WIDTH         800
 
-uint16_t color[20*20];
+void draw_callback(MapaConfig *_mapa) {
+  for(int i = 0; i < _mapa -> tetris_map_div_width; i++) {
+    for(int j = 0; j < _mapa -> tetris_map_div_high; j++) {
+      gfx->fillRect(_mapa -> tetris_square_width * i, _mapa -> tetris_square_high * j,  // x, y
+                    _mapa -> tetris_square_width, _mapa -> tetris_square_high,          // longX, longY
+                    Colores[mapa[i][j]]);                                               // Color
+    }
+  }
+}
 
 void setup() {
-
-  for(int i = 0; i < 20*20; i++) {
-    color[i] = Colores[2]; // BRG -> 5bits 5bits 6bits
-  }
   
   Serial.begin(115200);
   
@@ -21,10 +23,12 @@ void setup() {
   digitalWrite(DISPLAY_BL, HIGH);
   
   gfx->begin();
-  gfx->fillScreen(BLUE);
+  gfx->fillScreen(Colores[1]);
   
-  //tetris_config(display_high, display_width, tetris_map_div_high, tetris_map_div_width);
-  gfx->draw16bitRGBBitmap(50, 50, color, 20, 20);
+  tetris_config(DISPLAY_HIGH, DISPLAY_WIDTH);
+  
+  setDrawTetrisMapCallback(draw_callback);
+  drawTetrisMapCallback();
   
 }
 
