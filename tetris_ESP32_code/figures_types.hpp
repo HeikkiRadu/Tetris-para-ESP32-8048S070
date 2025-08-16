@@ -1,9 +1,5 @@
-#ifndef FIGURES_TYPES_H
-#define FIGURES_TYPES_H
-
-#ifdef __cplusplus
-extern "C" {
-#endif
+#ifndef FIGURES_TYPES_HPP
+#define FIGURES_TYPES_HPP
 
 typedef enum {
     FIGURE_O,
@@ -15,9 +11,5 @@ typedef enum {
     FIGURE_T,
     FIGURE_COUNT
 } FigureType;
-
-#ifdef __cplusplus
-}
-#endif
 
 #endif
