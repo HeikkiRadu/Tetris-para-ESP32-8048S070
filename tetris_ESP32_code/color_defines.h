@@ -27,6 +27,18 @@ static const int Colores[] = {COLOR_NEGRO,      // Fondo: 0
                               COLOR_ROJO,       // Z:     7
                               COLOR_MORADO};    // T:     8
 
+enum TetrisColores {
+  TETRIS_NEGRO,
+  TETRIS_GRIS,
+  TETRIS_AMARILLO,
+  TETRIS_CYAN,
+  TETRIS_NARANJA,
+  TETRIS_AZUL,
+  TETRIS_VERDE,
+  TETRIS_ROJO,
+  TETRIS_MORADO
+};
+
 #ifdef __cplusplus
 }
 #endif

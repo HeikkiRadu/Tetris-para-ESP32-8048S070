@@ -23,8 +23,7 @@ void setup() {
   digitalWrite(DISPLAY_BL, HIGH);
   
   gfx->begin();
-  gfx->fillScreen(Colores[1]);
-  
+  //gfx->fillScreen(Colores[TETRIS_ROJO]);
   tetris_config(DISPLAY_HIGH, DISPLAY_WIDTH);
   
   setDrawTetrisMapCallback(draw_callback);
