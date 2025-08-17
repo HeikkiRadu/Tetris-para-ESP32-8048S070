@@ -29,6 +29,10 @@ void setup() {
   setDrawTetrisMapCallback(draw_callback);
   drawTetrisMapCallback();
   
+  //Figure *unafigura = new Figure(FIGURE_T, 5, 6);
+  //Serial.println(unafigura -> getFigureType());
+  //delete unafigura;
+  
 }
 
 void loop() {

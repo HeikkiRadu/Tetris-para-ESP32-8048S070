@@ -2,6 +2,10 @@
 #define TETRIS_H
 
 #ifdef __cplusplus
+#include "figures_types.hpp"
+#endif
+
+#ifdef __cplusplus
 extern "C" {
 #endif
 
