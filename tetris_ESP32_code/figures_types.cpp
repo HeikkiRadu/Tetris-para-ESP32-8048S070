@@ -48,7 +48,6 @@ Figure::Figure(FigureType _type, unsigned int _pos_x, unsigned int _pos_y) {
       figure_map[1][2] = 8;
     break;
   }
-  
 }
 
 void Figure::setPosX(unsigned int _pos_x) {

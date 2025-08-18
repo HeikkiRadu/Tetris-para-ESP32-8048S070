@@ -13,29 +13,31 @@ extern "C" {
 
 #define TETRIS_MAP_DIV_HIGH   12
 #define TETRIS_MAP_DIV_WIDTH  20
-//#define TETRIS_SQUARE_HIGH    DISPLAY_HIGH / TETRIS_MAP_DIV_HIGH
-//#define TETRIS_SQUARE_WIDTH   DISPLAY_WIDTH / TETRIS_MAP_DIV_WIDTH
 
 // Estructura del mapa
-typedef struct MapaConfig {
+typedef struct Tetris {
   unsigned int initiated;
   unsigned int tetris_map_div_high;
   unsigned int tetris_map_div_width;
   unsigned int tetris_square_high;
   unsigned int tetris_square_width;
-} MapaConfig;
+  char mapa[TETRIS_MAP_DIV_WIDTH][TETRIS_MAP_DIV_HIGH];
+} Tetris;
 
-MapaConfig mapa_conf;
+// Estructura de la configuración del mapa
+Tetris tetris;
 
 // Prototipo de la función para registrar las dimensiones del mapa de tetris
-void tetris_config(unsigned int, unsigned int);
+void tetris_init(unsigned int, unsigned int);
 
-void setDrawTetrisMapCallback(void (*)(MapaConfig *));
+// Permite registrar la función de dibujado en pantalla del usuario
+void setDrawTetrisMapCallback(void (*)(Tetris *));
+
+// Ejecuta la función de dibujado en pantalla del usuario
 void drawTetrisMapCallback(void);
-void (*drawMap)(MapaConfig *);
 
-// Declaración del mapa
-char mapa[TETRIS_MAP_DIV_WIDTH][TETRIS_MAP_DIV_HIGH];
+// Puntero a función de dibujado en pantalla del usuario
+void (*drawMap)(Tetris *);
 
 #ifdef __cplusplus
 }
