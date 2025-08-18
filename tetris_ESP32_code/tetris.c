@@ -16,11 +16,18 @@ void tetrisInit(unsigned int display_high, unsigned int display_width) {
 }
 
 // Registra la función de dibujado en pantalla del usuario
-void setDrawTetrisMapCallback(void (*_drawMap)(Tetris *)) {
+//void setDrawTetrisMapCallback(void (*_drawMap)(Tetris *)) {
+void setDrawTetrisMapCallback(void (*_drawMap)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int)) {
   drawMap = _drawMap;
 }
 
 // Ejecuta la función de dibujado en pantalla del usuario enviando 
 void drawTetrisMapCallback(void) {
-  drawMap(&tetris);
+  for(int i = 0; i < tetris.tetris_map_div_width; i++) {
+    for(int j = 0; j < tetris.tetris_map_div_high; j++) {
+      drawMap(tetris.tetris_square_width * i, tetris.tetris_square_high * j,
+              tetris.tetris_square_width, tetris.tetris_square_high,
+              Colores[tetris.mapa[i][j]]);
+    }
+  }
 }

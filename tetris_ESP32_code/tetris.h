@@ -31,13 +31,13 @@ Tetris tetris;
 void tetrisInit(unsigned int, unsigned int);
 
 // Permite registrar la función de dibujado en pantalla del usuario
-void setDrawTetrisMapCallback(void (*)(Tetris *));
+void setDrawTetrisMapCallback(void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int));
 
 // Ejecuta la función de dibujado en pantalla del usuario
 void drawTetrisMapCallback(void);
 
 // Puntero a función de dibujado en pantalla del usuario
-void (*drawMap)(Tetris *);
+void (*drawMap)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int);
 
 #ifdef __cplusplus
 }
