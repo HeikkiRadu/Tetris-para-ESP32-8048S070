@@ -1,9 +1,7 @@
 #include "figures_types.hpp"
 
-Figure::Figure(FigureType _type, unsigned int _pos_x, unsigned int _pos_y) {
+Figure::Figure(FigureType _type) {
   type = _type;
-  pos_x = _pos_x;
-  pos_y = _pos_y;
   switch(_type) {
     case FIGURE_O:
       figure_map[0][0] = 2;

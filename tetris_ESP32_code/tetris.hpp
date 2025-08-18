@@ -1,15 +1,8 @@
-#ifndef TETRIS_H
-#define TETRIS_H
-
-#ifdef __cplusplus
-#include "figures_types.hpp"
-#endif
-
-#ifdef __cplusplus
-extern "C" {
-#endif
+#ifndef TETRIS_HPP
+#define TETRIS_HPP
 
 #include "color_defines.h"
+#include "figures_bag.hpp"
 
 #define TETRIS_MAP_DIV_HIGH   12
 #define TETRIS_MAP_DIV_WIDTH  20
@@ -22,10 +15,11 @@ typedef struct Tetris {
   unsigned int tetris_square_high;
   unsigned int tetris_square_width;
   char mapa[TETRIS_MAP_DIV_WIDTH][TETRIS_MAP_DIV_HIGH];
+  FiguresBag bag;
 } Tetris;
 
 // Estructura de la configuración del mapa
-Tetris tetris;
+extern Tetris tetris;
 
 // Prototipo de la función para registrar las dimensiones del mapa de tetris
 void tetrisInit(unsigned int, unsigned int);
@@ -37,10 +31,9 @@ void setDrawTetrisMapCallback(void (*)(unsigned int, unsigned int, unsigned int,
 void drawTetrisMapCallback(void);
 
 // Puntero a función de dibujado en pantalla del usuario
-void (*drawMap)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int);
+extern void (*drawMap)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int);
 
-#ifdef __cplusplus
-}
-#endif
+// Permite registrar la función del usuario para la generación de números random
+//void setRandomGenCallback(long (*)(void));
 
 #endif

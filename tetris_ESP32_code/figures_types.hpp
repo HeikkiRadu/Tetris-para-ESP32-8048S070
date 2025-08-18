@@ -15,8 +15,8 @@ typedef enum {
 class Figure {
   private:
     FigureType type;
-    unsigned int pos_x;
-    unsigned int pos_y;
+    unsigned int pos_x = 4;
+    unsigned int pos_y = 1;
     static const char map_length = 4;
   protected:
     char figure_map[map_length][map_length] = {0, 0, 0, 0,
@@ -24,7 +24,7 @@ class Figure {
                                                0, 0, 0, 0,
                                                0, 0, 0, 0};
   public:
-    Figure(FigureType, unsigned int, unsigned int);
+    Figure(FigureType);
     void setPosX(unsigned int);
     void setPosY(unsigned int);
     unsigned int getPosX(void);

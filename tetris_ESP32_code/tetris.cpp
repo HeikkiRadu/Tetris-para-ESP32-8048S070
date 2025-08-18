@@ -1,4 +1,10 @@
-#include "tetris.h"
+#include "tetris.hpp"
+
+// Estructura de la configuración del mapa
+Tetris tetris;
+
+// Puntero a función de dibujado en pantalla del usuario
+void (*drawMap)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int);
 
 // Función para registrar las dimensiones del mapa de tetris e inicializar el mapa
 void tetrisInit(unsigned int display_high, unsigned int display_width) {

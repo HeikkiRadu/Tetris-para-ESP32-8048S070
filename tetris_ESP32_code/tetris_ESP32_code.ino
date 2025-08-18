@@ -1,6 +1,6 @@
-#include "tetris.h"
-
 #include "display_config.h"
+#include "esp_system.h"
+#include "tetris.hpp"
 
 #define DISPLAY_HIGH          480
 #define DISPLAY_WIDTH         800
@@ -26,12 +26,11 @@ void setup() {
   //Figure *unafigura = new Figure(FIGURE_T, 5, 6);
   //Serial.println(unafigura -> getFigureType());
   //delete unafigura;
-  Serial.println(6 == FIGURE_T);
+  //uint32_t hw_random = esp_random() % FIGURE_COUNT;  // número aleatorio de 32 bits
+  //Serial.println(hw_random);
   
 }
 
 void loop() {
-
-  //Serial.println(mapa.length_high);
   
 }
