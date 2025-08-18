@@ -30,8 +30,8 @@ class Figure {
     unsigned int getPosX(void);
     unsigned int getPosY(void);
     FigureType getFigureType(void);
-    char getMapLength(void);  //virtual char getMapLength(void) = 0;
-    char *getMap(void);       //virtual char *getMap(void) = 0;
+    char getMapLength(void);
+    char *getMap(void);
 };
 
 #endif

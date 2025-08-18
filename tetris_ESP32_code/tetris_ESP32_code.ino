@@ -10,7 +10,7 @@ void draw_callback(Tetris *_tetris) {
     for(int j = 0; j < _tetris -> tetris_map_div_high; j++) {
       gfx->fillRect(_tetris -> tetris_square_width * i, _tetris -> tetris_square_high * j,    // x, y
                     _tetris -> tetris_square_width, _tetris -> tetris_square_high,            // longX, longY
-                    Colores[_tetris -> mapa[i][j]]);                                               // Color
+                    Colores[_tetris -> mapa[i][j]]);                                          // Color
     }
   }
 }
@@ -23,8 +23,8 @@ void setup() {
   digitalWrite(DISPLAY_BL, HIGH);
   
   gfx->begin();
-  //gfx->fillScreen(Colores[TETRIS_ROJO]);
-  tetris_init(DISPLAY_HIGH, DISPLAY_WIDTH);
+  
+  tetrisInit(DISPLAY_HIGH, DISPLAY_WIDTH);   // High, Width
   
   setDrawTetrisMapCallback(draw_callback);
   drawTetrisMapCallback();

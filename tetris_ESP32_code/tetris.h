@@ -28,7 +28,7 @@ typedef struct Tetris {
 Tetris tetris;
 
 // Prototipo de la función para registrar las dimensiones del mapa de tetris
-void tetris_init(unsigned int, unsigned int);
+void tetrisInit(unsigned int, unsigned int);
 
 // Permite registrar la función de dibujado en pantalla del usuario
 void setDrawTetrisMapCallback(void (*)(Tetris *));

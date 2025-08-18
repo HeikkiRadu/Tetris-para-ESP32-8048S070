@@ -1,7 +1,7 @@
 #include "tetris.h"
 
 // Función para registrar las dimensiones del mapa de tetris e inicializar el mapa
-void tetris_init(unsigned int display_high, unsigned int display_width) {
+void tetrisInit(unsigned int display_high, unsigned int display_width) {
   tetris.initiated = 1;
   tetris.tetris_square_high = display_high / TETRIS_MAP_DIV_HIGH;
   tetris.tetris_square_width = display_width / TETRIS_MAP_DIV_WIDTH;
