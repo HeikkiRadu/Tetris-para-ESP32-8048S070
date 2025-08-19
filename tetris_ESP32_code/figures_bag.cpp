@@ -3,12 +3,23 @@
 FiguresBag::FiguresBag() {}
 
 Figure *FiguresBag::getNextFigure(void) {
-  Figure *figure = &figures[index];
-  if(index == 6) {
-    /* MIXEAR BAG */
+  if (index >= FIGURE_COUNT) {
+    mixBag();
     index = 0;
-  } else {
-    index++;
   }
-  return figure;
+  return &figures[index++];
+}
+
+void FiguresBag::setRandomNumberCallback(unsigned int (*_getRandomNumber)(void)) {
+  getRandomNumber = _getRandomNumber;
+  mixBag();
+}
+
+void FiguresBag::mixBag(void) {
+  for (int i = FIGURE_COUNT - 1; i > 0; i--) {
+    int j = getRandomNumber() % (i + 1);
+    Figure temp = figures[i];
+    figures[i] = figures[j];
+    figures[j] = temp;
+  }
 }
