@@ -5,6 +5,8 @@
 #define DISPLAY_HIGH          480
 #define DISPLAY_WIDTH         800
 
+Tetris *tetris = new Tetris(DISPLAY_HIGH, DISPLAY_WIDTH);   // High, Width
+
 unsigned int random_generator(void) {
   return esp_random();
 }
@@ -20,24 +22,15 @@ void setup() {
   pinMode(DISPLAY_BL, OUTPUT);
   digitalWrite(DISPLAY_BL, HIGH);
   
-  gfx->begin();
+  gfx -> begin();
   
-  tetrisInit(DISPLAY_HIGH, DISPLAY_WIDTH);   // High, Width
-  
-  setDrawTetrisMapCallback(draw_callback);
-  drawTetrisMapCallback();
+  tetris -> setDrawTetrisMapCallback(draw_callback);
+  tetris -> drawTetrisMapCallback();
 
-  tetris.bag.setRandomNumberCallback(random_generator);
-  
-  //Figure *unafigura = new Figure(FIGURE_T, 5, 6);
-  //Serial.println(unafigura -> getFigureType());
-  //delete unafigura;
-  //uint32_t hw_random = esp_random() % FIGURE_COUNT;  // número aleatorio de 32 bits
-  //Serial.println(hw_random);
+  tetris -> bag.setRandomNumberCallback(random_generator);
   
 }
-//Figure *fig;
+
 void loop() {
-  //fig = tetris.bag.getNextFigure();
-  //Serial.println(fig -> getFigureType());
+  
 }
