@@ -15,6 +15,10 @@ void draw_callback(unsigned int x, unsigned int y, unsigned int w, unsigned int 
   gfx->fillRect(x, y, w, h, color);  // x, y, longX, longY, Color
 }
 
+unsigned long time_microS_callback(void) {
+  return micros();
+}
+
 void setup() {
   
   Serial.begin(115200);
@@ -25,9 +29,10 @@ void setup() {
   gfx -> begin();
   
   tetris -> setDrawTetrisMapCallback(draw_callback);
-  tetris -> drawTetrisMapCallback();
-
   tetris -> setRandomNumberCallback(random_generator_callback);
+  
+  tetris -> drawMap();
+  
   
   
   

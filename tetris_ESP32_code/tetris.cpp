@@ -15,19 +15,8 @@ Tetris::Tetris(unsigned int display_high, unsigned int display_width) {
 }
 
 // Registra la función de dibujado en pantalla del usuario
-void Tetris::setDrawTetrisMapCallback(void (*_drawMap)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int)) {
-  drawMap = _drawMap;
-}
-
-// Ejecuta la función de dibujado en pantalla del usuario enviando 
-void Tetris::drawTetrisMapCallback(void) {
-  for(int i = 0; i < map_div_width; i++) {
-    for(int j = 0; j < map_div_high; j++) {
-      drawMap(square_width * i, square_high * j,
-              square_width, square_high,
-              Colores[mapa[i][j]]);
-    }
-  }
+void Tetris::setDrawTetrisMapCallback(void (*_drawMapCallback)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int)) {
+  drawMapCallback = _drawMapCallback;
 }
 
 void Tetris::setRandomNumberCallback(unsigned int (*_getRandomNumber)(void)) {
