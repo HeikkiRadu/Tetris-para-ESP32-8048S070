@@ -29,3 +29,8 @@ void Tetris::drawTetrisMapCallback(void) {
     }
   }
 }
+
+void Tetris::setRandomNumberCallback(unsigned int (*_getRandomNumber)(void)) {
+  bag.getRandomNumber = _getRandomNumber;
+  bag.mixBag();
+}

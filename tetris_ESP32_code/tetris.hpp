@@ -22,6 +22,7 @@ class Tetris {
     Tetris(unsigned int, unsigned int);
     void setDrawTetrisMapCallback(void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int));
     void drawTetrisMapCallback(void);
+    void setRandomNumberCallback(unsigned int (*)(void));
 };
 
 #endif

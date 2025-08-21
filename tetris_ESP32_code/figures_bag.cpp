@@ -10,11 +10,6 @@ Figure *FiguresBag::getNextFigure(void) {
   return &figures[index++];
 }
 
-void FiguresBag::setRandomNumberCallback(unsigned int (*_getRandomNumber)(void)) {
-  getRandomNumber = _getRandomNumber;
-  mixBag();
-}
-
 void FiguresBag::mixBag(void) {
   for (int i = FIGURE_COUNT - 1; i > 0; i--) {
     int j = getRandomNumber() % (i + 1);

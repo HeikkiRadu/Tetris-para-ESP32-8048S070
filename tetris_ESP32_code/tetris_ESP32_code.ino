@@ -7,7 +7,7 @@
 
 Tetris *tetris = new Tetris(DISPLAY_HIGH, DISPLAY_WIDTH);   // High, Width
 
-unsigned int random_generator(void) {
+unsigned int random_generator_callback(void) {
   return esp_random();
 }
 
@@ -27,7 +27,9 @@ void setup() {
   tetris -> setDrawTetrisMapCallback(draw_callback);
   tetris -> drawTetrisMapCallback();
 
-  tetris -> bag.setRandomNumberCallback(random_generator);
+  tetris -> setRandomNumberCallback(random_generator_callback);
+  
+  
   
 }
 
