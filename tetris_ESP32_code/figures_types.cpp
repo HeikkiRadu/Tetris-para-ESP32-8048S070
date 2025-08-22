@@ -16,15 +16,15 @@ Figure::Figure(FigureType _type) {
       figure_map[0][3] = 3;
     break;
     case FIGURE_L:
-      figure_map[0][0] = 4;
-      figure_map[0][1] = 4;
-      figure_map[0][2] = 4;
       figure_map[1][0] = 4;
+      figure_map[1][1] = 4;
+      figure_map[1][2] = 4;
+      figure_map[0][2] = 4;
     break;
     case FIGURE_J:
       figure_map[0][0] = 5;
-      figure_map[0][1] = 5;
-      figure_map[0][2] = 5;
+      figure_map[1][0] = 5;
+      figure_map[1][1] = 5;
       figure_map[1][2] = 5;
     break;
     case FIGURE_S:
