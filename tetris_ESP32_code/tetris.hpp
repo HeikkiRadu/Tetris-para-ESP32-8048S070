@@ -17,12 +17,14 @@ class Tetris {
     unsigned int square_width;
     char mapa[TETRIS_MAP_DIV_WIDTH][TETRIS_MAP_DIV_HIGH];
     void (*drawMapCallback)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int);
-  public:
     FiguresBag bag;
+    Figure *figure_active = nullptr;
+  public:
     Tetris(unsigned int, unsigned int);
     void setDrawTetrisMapCallback(void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int));
     void setRandomNumberCallback(unsigned int (*)(void));
     void drawMap(void);
+    void setFigureOnMap(void);
 };
 
 #endif

@@ -4,10 +4,10 @@ Figure::Figure(FigureType _type) {
   type = _type;
   switch(_type) {
     case FIGURE_O:
-      figure_map[0][0] = 2;
       figure_map[0][1] = 2;
-      figure_map[1][0] = 2;
+      figure_map[0][2] = 2;
       figure_map[1][1] = 2;
+      figure_map[1][2] = 2;
     break;
     case FIGURE_I:
       figure_map[0][0] = 3;

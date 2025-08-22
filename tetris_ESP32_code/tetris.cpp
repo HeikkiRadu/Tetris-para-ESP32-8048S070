@@ -12,6 +12,12 @@ Tetris::Tetris(unsigned int display_high, unsigned int display_width) {
                                                                                           mapa[i][j] = 0;
     }
   }
+  mapa[1][1] = 2;
+  mapa[1][2] = 3;
+  mapa[1][3] = 4;
+  mapa[1][8] = 5;
+  mapa[1][9] = 6;
+  mapa[1][10] = 7;
 }
 
 // Registra la función de dibujado en pantalla del usuario

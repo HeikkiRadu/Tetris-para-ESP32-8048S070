@@ -31,13 +31,33 @@ void setup() {
   tetris -> setDrawTetrisMapCallback(draw_callback);
   tetris -> setRandomNumberCallback(random_generator_callback);
   
+  tetris -> setFigureOnMap();
+  
   tetris -> drawMap();
+  //gfx->fillRect(x, y, w, h, color);  // x, y, longX, longY, Color
+
+  /*if(tetris -> setFigureOnMap()) {
+    Serial.println("Puntero nulo");
+  } else {
+    Serial.println("Puntero no nulo");
+  }*/
   
-  
-  
+  /*char *elmapa = tetris -> setFigureOnMap();
+  for(int i = 0; i < 4; i++) {
+    for(int j = 0; j < 4; j++) {
+      Serial.print((int)*(elmapa + i * 4 + j));
+    }
+    Serial.println();
+  }*/
   
 }
-
+unsigned long time_ant;
+unsigned long time_act;
 void loop() {
+  
+  //time_ant = time_microS_callback();
+  //tetris -> drawMap();
+  //time_act = time_microS_callback();
+  //Serial.println(time_act - time_ant);
   
 }
