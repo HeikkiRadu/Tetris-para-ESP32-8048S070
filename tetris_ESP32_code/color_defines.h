@@ -15,17 +15,19 @@ extern "C" {
 #define COLOR_ROJO      0xF800
 #define COLOR_CYAN      0x07FF
 #define COLOR_NARANJA   0xFD20
+#define COLOR_BLANCO    0xFFFF
 
 // Vector de colores
-static const int Colores[] = {COLOR_NEGRO,      // Fondo: 0
-                              COLOR_GRIS,       // Marco: 1
-                              COLOR_AMARILLO,   // O:     2
-                              COLOR_CYAN,       // I:     3
-                              COLOR_NARANJA,    // L:     4
-                              COLOR_AZUL,       // J:     5
-                              COLOR_VERDE,      // S:     6
-                              COLOR_ROJO,       // Z:     7
-                              COLOR_MORADO};    // T:     8
+static const int Colores[] = {COLOR_NEGRO,      // Fondo:       0
+                              COLOR_GRIS,       // Marco:       1
+                              COLOR_AMARILLO,   // O:           2
+                              COLOR_CYAN,       // I:           3
+                              COLOR_NARANJA,    // L:           4
+                              COLOR_AZUL,       // J:           5
+                              COLOR_VERDE,      // S:           6
+                              COLOR_ROJO,       // Z:           7
+                              COLOR_MORADO,     // T:           8
+                              COLOR_BLANCO};    // COLLISION:   9
 
 enum TetrisColores {
   TETRIS_NEGRO,
@@ -36,7 +38,8 @@ enum TetrisColores {
   TETRIS_AZUL,
   TETRIS_VERDE,
   TETRIS_ROJO,
-  TETRIS_MORADO
+  TETRIS_MORADO,
+  TETRIS_BLANCO
 };
 
 #ifdef __cplusplus

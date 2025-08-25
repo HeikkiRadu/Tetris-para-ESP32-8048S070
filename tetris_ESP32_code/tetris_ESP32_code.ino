@@ -16,7 +16,7 @@ void draw_callback(unsigned int x, unsigned int y, unsigned int w, unsigned int 
 }
 
 unsigned long time_microS_callback(void) {
-  return micros();
+  return millis();
 }
 
 void setup() {
@@ -30,19 +30,21 @@ void setup() {
   
   tetris -> setDrawTetrisMapCallback(draw_callback);
   tetris -> setRandomNumberCallback(random_generator_callback);
+  tetris -> setTimeCallback(time_microS_callback);
   
-  tetris -> setFigureOnMap();
-  
-  tetris -> drawMap();
+  //tetris -> setFigureOnMap();
+  //tetris -> drawMap();
+  //tetris -> timer_handler();
   
 }
-unsigned long time_ant;
-unsigned long time_act;
+
 void loop() {
   
   //time_ant = time_microS_callback();
   //tetris -> drawMap();
   //time_act = time_microS_callback();
-  //Serial.println(time_act - time_ant);
+  //Serial.println(time_act - time_ant); timer_handler
+  //Serial.println(tetris -> timer_handler());
+  tetris -> timer_handler();
   
 }

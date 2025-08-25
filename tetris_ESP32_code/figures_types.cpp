@@ -2,7 +2,13 @@
 
 Figure::Figure(FigureType _type) {
   type = _type;
-  switch(_type) {
+  resetFigure();
+}
+
+void Figure::resetFigure(void) {
+  pos_x = 4;
+  pos_y = 1;
+  switch(type) {
     case FIGURE_O:
       figure_map[0][1] = 2;
       figure_map[0][2] = 2;

@@ -8,8 +8,9 @@ Tetris::Tetris(unsigned int display_high, unsigned int display_width) {
   map_div_width = TETRIS_MAP_DIV_WIDTH;
   for(int i = 0; i < TETRIS_MAP_DIV_WIDTH; i++) {
     for(int j = 0; j < TETRIS_MAP_DIV_HIGH; j++) {
-      i == 0 || i == TETRIS_MAP_DIV_WIDTH - 1 || j == 0 || j == TETRIS_MAP_DIV_HIGH - 1 ? mapa[i][j] = 1 :
-                                                                                          mapa[i][j] = 0;
+      mapa[i][j] = i == 0 || i == TETRIS_MAP_DIV_WIDTH - 1 ||
+                   j == 0 || j == TETRIS_MAP_DIV_HIGH - 1 ?
+                   1 : 0;
     }
   }
 }
@@ -22,4 +23,8 @@ void Tetris::setDrawTetrisMapCallback(void (*_drawMapCallback)(unsigned int, uns
 void Tetris::setRandomNumberCallback(unsigned int (*_getRandomNumber)(void)) {
   bag.getRandomNumber = _getRandomNumber;
   bag.mixBag();
+}
+
+void Tetris::setTimeCallback(unsigned long (*_timeCallback)(void)) {
+  timeCallback = _timeCallback;
 }
