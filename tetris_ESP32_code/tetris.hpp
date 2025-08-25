@@ -27,15 +27,15 @@ class Tetris {
     Figure *figure_active = nullptr;
     unsigned long time_ant = 0;
     unsigned long time_act = 0;
+    void drawMap(void);
+    void setFigureOnMap(void);
+    CollisionState collisionDetector(void);
   public:
     Tetris(unsigned int, unsigned int);
     void setDrawTetrisMapCallback(void (*)(unsigned int, unsigned int, unsigned int, unsigned int, unsigned int));
     void setRandomNumberCallback(unsigned int (*)(void));
     void setTimeCallback(unsigned long (*)(void));
-    void drawMap(void);
-    void setFigureOnMap(void);
     void timer_handler(void);
-    CollisionState collisionDetector(void);
 };
 
 #endif
