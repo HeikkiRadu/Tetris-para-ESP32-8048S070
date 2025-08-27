@@ -8,6 +8,8 @@ Figure::Figure(FigureType _type) {
 void Figure::resetFigure(void) {
   pos_x = 4;
   pos_y = 1;
+  pos_x_ant = 4;
+  pos_y_ant = 1;
   switch(type) {
     case FIGURE_O:
       figure_map[0][1] = 2;
@@ -55,10 +57,14 @@ void Figure::resetFigure(void) {
 }
 
 void Figure::setPosX(unsigned int _pos_x) {
+  mov_prev = MOVE_X;
+  pos_x_ant = pos_x;
   pos_x = _pos_x;
 }
 
 void Figure::setPosY(unsigned int _pos_y) {
+  mov_prev = MOVE_Y;
+  pos_y_ant = pos_y;
   pos_y = _pos_y;
 }
 
@@ -80,4 +86,30 @@ char Figure::getMapLength(void) {
 
 char *Figure::getMap(void) {
   return &figure_map[0][0];
+}
+
+void Figure::restorePreviousStateX(void) {
+  pos_x = pos_x_ant;
+}
+
+void Figure::restorePreviousStateY(void) {
+  pos_y = pos_y_ant;
+}
+
+Move Figure::getMovePrevious(void) {
+  return mov_prev;
+}
+
+void Figure::rotFigure(void) {
+  char temp_map[map_length][map_length];
+  for(int i = 0; i < map_length; i++) {
+    for(int j = 0; j < map_length; j++) {
+      temp_map[j][map_length - 1 - i] = figure_map[i][j];
+    }
+  }
+  for(int i = 0; i < map_length; i++) {
+    for(int j = 0; j < map_length; j++) {
+      figure_map[i][j] = temp_map[i][j];
+    }
+  }
 }

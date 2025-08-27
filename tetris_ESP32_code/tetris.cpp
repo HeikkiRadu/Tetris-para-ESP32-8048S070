@@ -1,15 +1,19 @@
 #include "tetris.hpp"
 
-Tetris::Tetris(unsigned int display_high, unsigned int display_width) {
+Tetris::Tetris(unsigned int display_height, unsigned int display_width) {
   initiated = 1;
-  square_high = display_high / TETRIS_MAP_DIV_HIGH;
+  square_height = display_height / TETRIS_MAP_DIV_HEIGHT;
   square_width = display_width / TETRIS_MAP_DIV_WIDTH;
-  map_div_high = TETRIS_MAP_DIV_HIGH;
+  map_div_height = TETRIS_MAP_DIV_HEIGHT;
   map_div_width = TETRIS_MAP_DIV_WIDTH;
+  resetMap();
+}
+
+void Tetris::resetMap(void) {
   for(int i = 0; i < TETRIS_MAP_DIV_WIDTH; i++) {
-    for(int j = 0; j < TETRIS_MAP_DIV_HIGH; j++) {
+    for(int j = 0; j < TETRIS_MAP_DIV_HEIGHT; j++) {
       mapa[i][j] = i == 0 || i == TETRIS_MAP_DIV_WIDTH - 1 ||
-                   j == 0 || j == TETRIS_MAP_DIV_HIGH - 1 ?
+                   j == 0 || j == TETRIS_MAP_DIV_HEIGHT - 1 ?
                    1 : 0;
     }
   }
@@ -27,4 +31,8 @@ void Tetris::setRandomNumberCallback(unsigned int (*_getRandomNumber)(void)) {
 
 void Tetris::setTimeCallback(unsigned long (*_timeCallback)(void)) {
   timeCallback = _timeCallback;
+}
+
+void Tetris::setInputMoveCallback(Move (*_inputMoveCallback)(void)) {
+  inputMoveCallback = _inputMoveCallback;
 }
